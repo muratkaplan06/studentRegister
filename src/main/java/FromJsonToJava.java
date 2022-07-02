@@ -23,7 +23,7 @@ public class FromJsonToJava implements Runnable {
             JsonParser parser = new JsonParser();
             /*Json dosyamız birden person objesine karşılık gelecek bilgi tuttuğu için bir JsonArray
             tanımlıyoruz ve bu JsonArray’i parser nesnesinin parse metodu ile oluşturuyoruz*/
-            gJsonArray jsonArray = parser.parse(fileReader).getAsJsonArray();
+            JsonArray jsonArray = parser.parse(fileReader).getAsJsonArray();
             for (int i = 0; i < jsonArray.size(); i++) {
                 Student person = gson.fromJson(jsonArray.get(i), Student.class);
                 studentList.add(person);
